@@ -75,31 +75,42 @@ class _HomeActivityState extends State<HomeActivity> {
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
+
         child: SizedBox(
           child: Column(
             children: [
-              Text("heelo"),
-              SizedBox(
-                height: 100,
-                width: 100,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
-                    foregroundColor: Colors.white,
-
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
+              GestureDetector( ///text clickable
+                onTap: () {
+                  _showmessage(context, "Image was clicked!");
+                },
+                child: Image.asset("assets/image/github.jpg"),
+              ),
+              InkWell(
+                onTap: () {
+                  _showmessage(context, "Text was clicked!");
+                },
+                child: Text("hello"),
+              ),
+              Text("hello"),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.red,
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  onPressed: () {
-                    _showmessage(context, "Button was clicked!");
-                  },
-                  child: Text("clickme"),
                 ),
+                onPressed: () {
+                  _showmessage(context, "Button was clicked!");
+                },
+                child: Text("clickme"),
+
               ),
             ],
+
           ),
         ),
+
       ),
 
       bottomNavigationBar: BottomNavigationBar(
@@ -134,6 +145,14 @@ class _HomeActivityState extends State<HomeActivity> {
             label: "Settings",
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.red,
+        foregroundColor: Colors.white,
+        onPressed: () {
+          _showmessage(context, "Floating action button was clicked!");
+        },
+        child: Icon(Icons.add), //icon or text
       ),
     );
   }

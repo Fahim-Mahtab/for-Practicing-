@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home_Screen.dart';
+import 'input_flutter.dart';
 import 'loginPage.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: "My First App",
       color: Colors.black,
       debugShowCheckedModeBanner: false,
-      home: Login(),
+      home: FlutterInput(),
     );
   }
 }
